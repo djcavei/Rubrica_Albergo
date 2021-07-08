@@ -1,0 +1,27 @@
+Ogni nuovo nominativo deve essere introdotto dal simbolo '-' altrimenti il programma non funziona
+le restanti informazioni vanno inserite dopo la pressione del tasto Invio. Infine premere nuovamente invio e introdurre il nuovo nominativo
+sempre con il simbolo '-'.
+
+esempio:
+
+voglio inserire i nomi Giacobbi Fabio nato a treviso e residente ecc. e il nominativo Zorzi Antonio nato a Massa Carrara ecc.:
+
+
+-Giacobbi Fabio(premi invio)
+nato a treviso
+residente a....(finito con il signor giacobbi premo invio e introduco il nuovo nominativo con '-')
+-Zorzi Antonio
+nato a Massa
+residente a...
+-Nuovo nome
+
+
+Note:
+-Non è importante l'ordine alfabetico, maiuscole e minuscole dei nominativi vengono automaticamente formattate
+-non sono importante quanti "a capo" vengono inseriti, l'importante è che OGNI NOMINATIVO venga introdotto da '-'e immediatamente
+SENZA spazi venga inserito il nominativo seguito obbligatoriamente da un altro "a capo".
+in seguito si possono inserire informazioni a piacere e formattate a piacere, l'importante è che al termine delle informazioni 
+venga digitato "a capo" inserire '-' e subito dopo il nuovo nominativo
+
+
+
