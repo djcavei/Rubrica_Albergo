@@ -31,6 +31,7 @@ void search(vector<pair<string,string>>& vec) {
     cin>>s;
     stringstream ss(s);
     ss>>s;
+    cout<<endl;
     for(char& elem : s)
         if(elem >= 'A' && elem <= 'Z') elem += 32;
     s[0] -= 32;
@@ -44,6 +45,12 @@ void search(vector<pair<string,string>>& vec) {
             }
             if(gg) cout<<vec[i].first<<endl<<vec[i].second<<endl<<endl;
         }
+    }
+}
+
+void delete_double(vector<pair<string,string>>& vec) {
+    for(int i = 0; i < vec.size()-1; ++i) {
+        if(vec[i].first == vec[i+1].first) vec.erase(vec.begin()+i+1);
     }
 }
 
@@ -63,6 +70,7 @@ int main() {
         rubrica[rubrica.size()-1].first[0] -= 32;
     }
     sort(rubrica);
+    //delete_double(rubrica);
     input.close();
     for(const auto& elem : rubrica)
         output<<'-'<<elem.first<<endl<<elem.second<<endl;
