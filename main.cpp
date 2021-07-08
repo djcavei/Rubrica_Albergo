@@ -26,7 +26,7 @@ void sort(vector<pair<string, string>>& vec) {
 }
 
 void search(vector<pair<string,string>>& vec) {
-    cout<<"inserisci nome o iniziali di esso: "<<endl;
+    cout<<"inserisci cognome o iniziali di esso: "<<endl;
     string s;
     cin>>s;
     stringstream ss(s);
@@ -60,6 +60,9 @@ int main() {
         getline(input, s);
         getline(input, s2, '-');
         rubrica.emplace_back(s,s2);
+        for(auto& elem : rubrica[rubrica.size()-1].first)
+            elem >= 'A' && elem <= 'Z' ? elem += 32 : 0;
+        rubrica[rubrica.size()-1].first[0] -= 32;
     }
     sort(rubrica);
     input.close();
