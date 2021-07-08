@@ -77,9 +77,16 @@ int main() {
         getline(input, s);
         getline(input, s2, '-');
         rubrica.emplace_back(s,s2);
-        for(auto& elem : rubrica[rubrica.size()-1].first)
-            elem >= 'A' && elem <= 'Z' ? elem += 32 : 0;
-        rubrica[rubrica.size()-1].first[0] -= 32;
+        for(int k = 1; k < rubrica[rubrica.size()-1].first.size(); ++k){
+            if(rubrica[rubrica.size()-1].first[k-1] == ' ' &&
+                    rubrica[rubrica.size()-1].first[k] >= 'a' &&
+                    rubrica[rubrica.size()-1].first[k] <= 'z')
+                rubrica[rubrica.size()-1].first[k] -= 32;
+            else if(rubrica[rubrica.size()-1].first[k] >= 'A' && rubrica[rubrica.size()-1].first[k] <= 'Z')
+                rubrica[rubrica.size()-1].first[k] += 32;
+        }
+        rubrica[rubrica.size()-1].first[0] >= 'a' &&
+                rubrica[rubrica.size()-1].first[0] <= 'z' ? rubrica[rubrica.size()-1].first[0] -= 32 : 0;
     }
     sort(rubrica);
     //delete_double(rubrica);
