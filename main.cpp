@@ -57,6 +57,15 @@ void delete_double(vector<pair<string,string>>& vec) {
     }
 }
 
+void clear_endl(vector<pair<string,string>>& vec) {
+    for(int i = 0; i < vec.size(); ++i) {
+        for(int j = vec[i].second.size()-1; j > 0 && vec[i].second[j] == '\n' && vec[i].second[j-1] == '\n'; --j) {
+            vec[i].second.erase(vec[i].second.begin()+j);
+            j = vec[i].second.size();
+        }
+    }
+}
+
 int main() {
     ifstream input("rubrica.txt");
     ofstream output("ordinata/rubrica_ordinata.txt");
@@ -75,6 +84,7 @@ int main() {
     sort(rubrica);
     //delete_double(rubrica);
     input.close();
+    clear_endl(rubrica);
     for(const auto& elem : rubrica)
         output<<'-'<<elem.first<<endl<<elem.second<<endl;
     output.close();
