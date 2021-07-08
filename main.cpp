@@ -49,8 +49,8 @@ void search(vector<pair<string,string>>& vec) {
 
 int main() {
     setbuf(stdout, NULL);
-    ifstream input("mabo.txt");
-    ofstream output("alfa/ordered_mabo.txt");
+    ifstream input("rubrica.txt");
+    ofstream output("ordinata/rubrica_ordinata.txt");
     char sep;
     char exit = 'x';
     input>>sep;
