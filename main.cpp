@@ -50,7 +50,10 @@ void search(vector<pair<string,string>>& vec) {
 
 void delete_double(vector<pair<string,string>>& vec) {
     for(int i = 0; i < vec.size()-1; ++i) {
-        if(vec[i].first == vec[i+1].first) vec.erase(vec.begin()+i+1);
+        string one{}, two{};
+        for(auto elem : vec[i].first) if(elem != ' ' && elem != '\0' && elem != '\t') one.push_back(elem);
+        for(auto elem : vec[i+1].first) if(elem != ' ' && elem != '\0' && elem != '\t') two.push_back(elem);
+        if(one == two) vec.erase(vec.begin()+i+1);
     }
 }
 
