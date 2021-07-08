@@ -24,4 +24,5 @@ in seguito si possono inserire informazioni a piacere e formattate a piacere, l'
 venga digitato "a capo" inserire '-' e subito dopo il nuovo nominativo
 
 
-
+la rubrica deve chiamarsi "rubrica.txt"
+la rubrica ordinata deve essere nella sottocartella "ordinata" e chiamarsi "rubrica_ordinata.txt"

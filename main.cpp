@@ -68,25 +68,7 @@ int main() {
     input.close();
     for(const auto& elem : rubrica)
         output<<'-'<<elem.first<<endl<<elem.second<<endl;
-
-    while (!kbhit() && exit != 'q'){
-        cout<<"Cosa vuoi fare?"<<endl<<"'Q' per uscire 'R' per cercare"<<endl;
-        exit = getch();
-        if(exit >= 'A' && exit <= 'Z') exit += 32;
-        switch (exit) {
-            case 'q': {
-                break;
-            }
-            case 'r': {
-                search(rubrica);
-                getchar();
-                break;
-            }
-            default: {
-                getchar();
-                break;
-            }
-        }
-    }
+    output.close();
+    while (1) search(rubrica);
     return 0;
 }
