@@ -89,7 +89,7 @@ int main() {
                 rubrica[rubrica.size()-1].first[0] <= 'z' ? rubrica[rubrica.size()-1].first[0] -= 32 : 0;
     }
     sort(rubrica);
-    //delete_double(rubrica);
+    delete_double(rubrica);
     input.close();
     clear_endl(rubrica);
     for(const auto& elem : rubrica)
