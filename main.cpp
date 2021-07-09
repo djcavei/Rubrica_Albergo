@@ -6,6 +6,7 @@
 
 using namespace std;
 
+char eexit = 'x';
 
 void sort(vector<pair<string, string>>& vec) {
     vector<pair<string, string>> aux(1);
@@ -31,6 +32,10 @@ void search(vector<pair<string,string>>& vec) {
     stringstream ss(s);
     ss>>s;
     cout<<endl;
+    if(s[0] == '.') {
+        eexit = '.';
+        return;
+    }
     for(char& elem : s)
         if(elem >= 'A' && elem <= 'Z') elem += 32;
     s[0] -= 32;
@@ -78,14 +83,14 @@ int main() {
         rubrica.emplace_back(s,s2);
         for(int k = 1; k < rubrica[rubrica.size()-1].first.size(); ++k){
             if(rubrica[rubrica.size()-1].first[k-1] == ' ' &&
-                    rubrica[rubrica.size()-1].first[k] >= 'a' &&
-                    rubrica[rubrica.size()-1].first[k] <= 'z')
+               rubrica[rubrica.size()-1].first[k] >= 'a' &&
+               rubrica[rubrica.size()-1].first[k] <= 'z')
                 rubrica[rubrica.size()-1].first[k] -= 32;
             else if(rubrica[rubrica.size()-1].first[k] >= 'A' && rubrica[rubrica.size()-1].first[k] <= 'Z')
                 rubrica[rubrica.size()-1].first[k] += 32;
         }
         rubrica[rubrica.size()-1].first[0] >= 'a' &&
-                rubrica[rubrica.size()-1].first[0] <= 'z' ? rubrica[rubrica.size()-1].first[0] -= 32 : 0;
+        rubrica[rubrica.size()-1].first[0] <= 'z' ? rubrica[rubrica.size()-1].first[0] -= 32 : 0;
     }
     sort(rubrica);
     delete_double(rubrica);
@@ -94,6 +99,6 @@ int main() {
     for(const auto& elem : rubrica)
         output<<'-'<<elem.first<<endl<<elem.second<<endl;
     output.close();
-    while (1) search(rubrica);
+    while (eexit != '.') search(rubrica);
     return 0;
 }
