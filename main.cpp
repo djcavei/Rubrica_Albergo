@@ -96,9 +96,22 @@ int main() {
     delete_double(rubrica);
     input.close();
     clear_endl(rubrica);
+    //funzione per formattazione qt
+    for(auto i = 0; i < rubrica.size(); ++i) {
+        for(auto k = 0; k < rubrica[i].first.size(); ++k) {
+            if(rubrica[i].first[k] == ' ' && k > 2) {
+                rubrica[i].first[k] = '\n';
+                break;
+            }
+        }
+        for(auto j = 0; j < rubrica[i].second.size(); ++j) {
+            if(rubrica[i].second[j] == '\n') rubrica[i].second[j] = ' ';
+        }
+    }
     for(const auto& elem : rubrica)
-        output<<'-'<<elem.first<<endl<<elem.second<<endl;
+        output<<elem.first<<endl<<endl<<endl<<endl<<endl<<elem.second<<endl;
     output.close();
+    cout<<rubrica.size();
     while (eexit != '.') search(rubrica);
     return 0;
 }
